@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icons/kanan.png</file>
+    <file>icons/kiri.jpg</file>
+    <file>icons/aboutus.png</file>
+    <file>icons/help.png</file>
+    <file>icons/multimg.png</file>
+    <file>icons/oneimg.png</file>
+    <file>icons/result.png</file>
+    <file>icons/twitter.svg</file>
+    <file>icons/bantuan.png</file>
+    <file>icons/hasil.png</file>
+    <file>icons/process.png</file>
+    <file>icons/process2.png</file>
+    <file>icons/tentangkami.png</file>
+  </qresource>
+</RCC>

@@ -2,6 +2,7 @@ from http.client import ImproperConnectionState
 import sys
 import os
 import PyQt5
+from fpdf import FPDF
 
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QApplication
 from PyQt5.QtGui import QPixmap
@@ -33,6 +34,12 @@ class MainWindow:
         self.ui.btn_proses1.clicked.connect(self.predict1)
         # event detect multi image
         self.ui.btn_prosesmul.clicked.connect(self.multiPredict)
+
+        # event donwload pdf 1 citra
+        self.ui.btn_pdf1.clicked.connect(self.downloadPdf)
+
+        # event donwload pdf multi citra
+        self.ui.btn_pdf2.clicked.connect(self.downloadMultiPdf)
 
     def show(self):
         self.main_win.show()
@@ -107,7 +114,55 @@ class MainWindow:
         mid_rez = QSize(200, 200)
         pixmap = pixmap.scaled(mid_rez)
         self.ui.label_mulimg.setPixmap(QPixmap(pixmap))
-        self.ui.label_mulimg.setScaledContents(True)
+        # self.ui.label_mulimg.setScaledContents(True)
+
+    # download 1 citra pdf
+    def downloadPdf(self):
+        pdf_path = QFileDialog.getSaveFileName(self.main_win,
+                                               "Save pdf file", "", ("PDF files (*.pdf)"))
+        pdf_path = str(pdf_path[0])
+
+        pdf = FPDF()
+        pdf.add_page()
+        pdf.set_font("Arial", size=15)
+        # create a cell
+        pdf.cell(200, 10, txt=self.ui.lineEditPasien.text(),
+                 ln=1, align='C')
+        # add another cell
+        pdf.cell(200, 10, txt=self.ui.lineEditKelamin.text(),
+                 ln=2, align='C')
+
+        # path image harus relative path
+        list_img_path = []
+        list_img = os.listdir(self.result_folder_path)
+        for x in list_img:
+            list_img_path.append(self.result_folder_path + "\\" + x)
+
+        # add image
+        pdf.image(list_img_path[0])
+        # save the pdf with name .pdf
+
+        # save the pdf
+        pdf.output(name=pdf_path)
+
+    # download multi citra pdf
+    def downloadMultiPdf(self):
+        pdf_path = QFileDialog.getSaveFileName(self.main_win,
+                                               "Save pdf file", "", ("PDF files (*.pdf)"))
+        pdf_path = str(pdf_path[0])
+
+        pdf = FPDF()
+        pdf.add_page()
+
+        list_img_path = []
+        list_img = os.listdir(self.result_folder_path)
+        for x in list_img:
+            list_img_path.append(self.result_folder_path + "\\" + x)
+        for i in list_img_path:
+            pdf.image(i)
+
+        # save the pdf
+        pdf.output(name=pdf_path)
 
 
 if __name__ == "__main__":

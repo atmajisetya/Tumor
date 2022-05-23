@@ -663,7 +663,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit">
+                     <widget class="QLineEdit" name="lineEditPasien">
                       <property name="text">
                        <string>Atmaji Setya</string>
                       </property>
@@ -700,7 +700,7 @@
                      </widget>
                     </item>
                     <item>
-                     <widget class="QLineEdit" name="lineEdit_2">
+                     <widget class="QLineEdit" name="lineEditKelamin">
                       <property name="text">
                        <string>Laki - Laki</string>
                       </property>
@@ -1023,6 +1023,13 @@
                 </property>
                 <property name="text">
                  <string>PROSES</string>
+                </property>
+               </widget>
+              </item>
+              <item alignment="Qt::AlignLeft">
+               <widget class="QPushButton" name="btn_pdf2">
+                <property name="text">
+                 <string>Download as PDF</string>
                 </property>
                </widget>
               </item>

@@ -1,4 +1,6 @@
 from fpdf import FPDF
+from torch import layout
+from PyQt5.QtWidgets import QMainWindow, QFileDialog
 
 
 # def pdf_convert():
@@ -31,4 +33,8 @@ pdf.cell(200, 10, txt="Laki-Laki",
 pdf.image('runs\detect\exp3\y94.jpg')
 
 # save the pdf with name .pdf
-pdf.output("GFG.pdf")
+#pdf_path = get_pdf_path()
+#pdf_path = "D:\Capstone\coba.pdf"
+pdf_path = QFileDialog.getExistingDirectory()
+# pdf.output(name=pdf_path)
+print('Output PDF: %s' % pdf_path)

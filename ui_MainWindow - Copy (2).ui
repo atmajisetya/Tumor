@@ -93,10 +93,7 @@
                 <string notr="true">color: #ffffff;</string>
                </property>
                <property name="text">
-                <string>APPNAME</string>
-               </property>
-               <property name="scaledContents">
-                <bool>true</bool>
+                <string>APP NAME</string>
                </property>
               </widget>
              </item>
@@ -207,10 +204,7 @@
                    <string notr="true">color: #ffffff;</string>
                   </property>
                   <property name="text">
-                   <string>One Image                     Processing</string>
-                  </property>
-                  <property name="wordWrap">
-                   <bool>true</bool>
+                   <string>PROSES 1</string>
                   </property>
                  </widget>
                 </item>
@@ -278,10 +272,75 @@
                    <string notr="true">color: #ffffff;</string>
                   </property>
                   <property name="text">
-                   <string>Multi Image            Processing</string>
+                   <string>PROSES 2</string>
                   </property>
-                  <property name="wordWrap">
-                   <bool>true</bool>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item alignment="Qt::AlignTop">
+              <widget class="QFrame" name="frame_hasil">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QHBoxLayout" name="horizontalLayout_7">
+                <property name="spacing">
+                 <number>0</number>
+                </property>
+                <property name="leftMargin">
+                 <number>0</number>
+                </property>
+                <property name="topMargin">
+                 <number>0</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QPushButton" name="btn_menu_hasil">
+                  <property name="styleSheet">
+                   <string notr="true">background-color: #7894CF;</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="icons.qrc">
+                    <normaloff>:/icons/icons/result.png</normaloff>:/icons/icons/result.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>32</width>
+                    <height>32</height>
+                   </size>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_5">
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">color: #ffffff;</string>
+                  </property>
+                  <property name="text">
+                   <string>HASIL</string>
                   </property>
                  </widget>
                 </item>
@@ -361,16 +420,11 @@
                 </item>
                 <item>
                  <widget class="QLabel" name="label_bantuan">
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
                   <property name="styleSheet">
                    <string notr="true">color: #ffffff;</string>
                   </property>
                   <property name="text">
-                   <string>Help</string>
+                   <string>BANTUAN</string>
                   </property>
                  </widget>
                 </item>
@@ -423,16 +477,11 @@
                 </item>
                 <item>
                  <widget class="QLabel" name="label_tentang">
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                   </font>
-                  </property>
                   <property name="styleSheet">
                    <string notr="true">color: #ffffff;</string>
                   </property>
                   <property name="text">
-                   <string>About Us</string>
+                   <string>TENTANG KAMI</string>
                   </property>
                  </widget>
                 </item>
@@ -555,7 +604,7 @@
                     </font>
                    </property>
                    <property name="text">
-                    <string>ONE IMAGE PROCESSING</string>
+                    <string>PENGOLAHAN SATU CITRA</string>
                    </property>
                   </widget>
                  </item>
@@ -609,14 +658,14 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>Patient Name  </string>
+                       <string>NAMA PASIEN   </string>
                       </property>
                      </widget>
                     </item>
                     <item>
                      <widget class="QLineEdit" name="lineEditPasien">
                       <property name="text">
-                       <string/>
+                       <string>Atmaji Setya</string>
                       </property>
                      </widget>
                     </item>
@@ -646,14 +695,14 @@
                        </font>
                       </property>
                       <property name="text">
-                       <string>Patient Gender</string>
+                       <string>JENIS KELAMIN  </string>
                       </property>
                      </widget>
                     </item>
                     <item>
                      <widget class="QLineEdit" name="lineEditKelamin">
                       <property name="text">
-                       <string/>
+                       <string>Laki - Laki</string>
                       </property>
                      </widget>
                     </item>
@@ -714,7 +763,7 @@
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap resource="icons.qrc">:/icons/icons/oneimagefix.png</pixmap>
+                    <pixmap resource="icons.qrc">:/icons/icons/kiri.jpg</pixmap>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -730,7 +779,7 @@
                     <string notr="true">background-color: #7894CF;</string>
                    </property>
                    <property name="text">
-                    <string>Upload Image</string>
+                    <string>Browse Image</string>
                    </property>
                   </widget>
                  </item>
@@ -755,7 +804,7 @@
                     <string/>
                    </property>
                    <property name="pixmap">
-                    <pixmap resource="icons.qrc">:/icons/icons/oneresultpdf.png</pixmap>
+                    <pixmap resource="icons.qrc">:/icons/icons/kanan.png</pixmap>
                    </property>
                    <property name="scaledContents">
                     <bool>true</bool>
@@ -793,7 +842,7 @@
                  <string notr="true">background-color: #7894CF;</string>
                 </property>
                 <property name="text">
-                 <string>Process</string>
+                 <string>PROSES</string>
                 </property>
                </widget>
               </item>
@@ -886,7 +935,7 @@
                  </font>
                 </property>
                 <property name="text">
-                 <string>MULTIPLE IMAGE PROCESSING</string>
+                 <string>PENGOLAHAN BANYAK CITRA</string>
                 </property>
                </widget>
               </item>
@@ -909,7 +958,7 @@
              </property>
             </widget>
            </item>
-           <item alignment="Qt::AlignHCenter">
+           <item>
             <widget class="QFrame" name="frame_contentmul">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
@@ -969,7 +1018,7 @@
                  <string/>
                 </property>
                 <property name="pixmap">
-                 <pixmap resource="icons.qrc">:/icons/icons/foldersearchS.png</pixmap>
+                 <pixmap resource="icons.qrc">:/icons/icons/kiri.jpg</pixmap>
                 </property>
                 <property name="scaledContents">
                  <bool>true</bool>
@@ -985,7 +1034,7 @@
                  <string notr="true">background-color: #7894CF;</string>
                 </property>
                 <property name="text">
-                 <string>Select Folder</string>
+                 <string>Browse Image</string>
                 </property>
                </widget>
               </item>
@@ -1022,36 +1071,12 @@
                  <string notr="true">background-color: #7894CF;</string>
                 </property>
                 <property name="text">
-                 <string>Process</string>
-                </property>
-                <property name="autoDefault">
-                 <bool>false</bool>
-                </property>
-                <property name="default">
-                 <bool>false</bool>
-                </property>
-                <property name="flat">
-                 <bool>false</bool>
+                 <string>PROSES</string>
                 </property>
                </widget>
               </item>
-              <item alignment="Qt::AlignRight">
+              <item alignment="Qt::AlignLeft">
                <widget class="QPushButton" name="btn_pdf2">
-                <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="layoutDirection">
-                 <enum>Qt::LeftToRight</enum>
-                </property>
-                <property name="autoFillBackground">
-                 <bool>false</bool>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">background-color: #7894CF;  margin-left: 4;</string>
-                </property>
                 <property name="text">
                  <string>Download as PDF</string>
                 </property>

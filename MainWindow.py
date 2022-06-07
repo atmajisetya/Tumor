@@ -3,6 +3,7 @@ import sys
 import os
 import PyQt5
 from fpdf import FPDF
+from PIL import Image
 
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QApplication
 from PyQt5.QtGui import QPixmap
@@ -74,10 +75,19 @@ class MainWindow:
         file = str(QFileDialog.getExistingDirectory())
         print(file)
         self.folder_path = file
+        list_img_path = []
+        list_img = os.listdir(file)
+        for x in list_img:
+            list_img_path.append(self.folder_path + "\\" + x)
+
+        print(list_img_path)
+        pixmap = QPixmap(list_img_path[0])
+        mid_rez = QSize(500, 500)
+        pixmap = pixmap.scaled(mid_rez)
         # imagePath = fname[0][1]
         # pixmap = QPixmap(imagePath)
-        # self.ui.label_mulimg.setPixmap(QPixmap(pixmap))
-        # self.ui.label_mulimg.setScaledContents(True)
+        self.ui.label_mulimg.setPixmap(QPixmap(pixmap))
+        self.ui.label_mulimg.setScaledContents(True)
 
     # melakukan deteksi untuk 1 image
     def predict1(self):
@@ -111,10 +121,10 @@ class MainWindow:
             list_img_path.append(self.result_folder_path + "\\" + x)
 
         pixmap = QPixmap(list_img_path[0])
-        mid_rez = QSize(200, 200)
+        mid_rez = QSize(500, 500)
         pixmap = pixmap.scaled(mid_rez)
         self.ui.label_mulimg.setPixmap(QPixmap(pixmap))
-        # self.ui.label_mulimg.setScaledContents(True)
+        self.ui.label_mulimg.setScaledContents(True)
 
     # download 1 citra pdf
     def downloadPdf(self):
@@ -126,11 +136,13 @@ class MainWindow:
         pdf.add_page()
         pdf.set_font("Arial", size=15)
         # create a cell
-        pdf.cell(200, 10, txt=self.ui.lineEditPasien.text(),
+        pdf.cell(200, 10, txt="Diagnostic Result",
                  ln=1, align='C')
+        pdf.cell(200, 10, txt="Patient's Name: " + self.ui.lineEditPasien.text(),
+                 ln=2, align='L')
         # add another cell
-        pdf.cell(200, 10, txt=self.ui.lineEditKelamin.text(),
-                 ln=2, align='C')
+        pdf.cell(200, 10, txt="Patient Gender: " + self.ui.lineEditKelamin.text(),
+                 ln=3, align='L')
 
         # path image harus relative path
         list_img_path = []
@@ -139,11 +151,14 @@ class MainWindow:
             list_img_path.append(self.result_folder_path + "\\" + x)
 
         # add image
-        pdf.image(list_img_path[0])
+        pdf.image(list_img_path[0], w=100, h=100)
         # save the pdf with name .pdf
 
         # save the pdf
         pdf.output(name=pdf_path)
+        pdf_path_internal = self.result_folder_path + "\HasilTumor.pdf"
+        print(pdf_path_internal)
+        pdf.output(name=pdf_path_internal)
 
     # download multi citra pdf
     def downloadMultiPdf(self):
@@ -153,13 +168,18 @@ class MainWindow:
 
         pdf = FPDF()
         pdf.add_page()
+        pdf.set_font("Arial", size=15)
+        # create a cell
+        pdf.cell(200, 10, txt="Diagnostic Results",
+                 ln=1, align='C')
 
         list_img_path = []
         list_img = os.listdir(self.result_folder_path)
         for x in list_img:
             list_img_path.append(self.result_folder_path + "\\" + x)
+
         for i in list_img_path:
-            pdf.image(i)
+            pdf.image(i, w=100, h=100)
 
         # save the pdf
         pdf.output(name=pdf_path)

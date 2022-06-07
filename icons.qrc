@@ -1,5 +1,9 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/foldersearchS.png</file>
+    <file>icons/foldersearch.png</file>
+    <file>icons/oneimagefix.png</file>
+    <file>icons/oneresultpdf.png</file>
     <file>icons/kanan.png</file>
     <file>icons/kiri.jpg</file>
     <file>icons/aboutus.png</file>

@@ -93,10 +93,7 @@
                 <string notr="true">color: #ffffff;</string>
                </property>
                <property name="text">
-                <string>APPNAME</string>
-               </property>
-               <property name="scaledContents">
-                <bool>true</bool>
+                <string>APP NAME</string>
                </property>
               </widget>
              </item>
@@ -616,7 +613,7 @@
                     <item>
                      <widget class="QLineEdit" name="lineEditPasien">
                       <property name="text">
-                       <string/>
+                       <string>Atmaji Setya</string>
                       </property>
                      </widget>
                     </item>
@@ -653,7 +650,7 @@
                     <item>
                      <widget class="QLineEdit" name="lineEditKelamin">
                       <property name="text">
-                       <string/>
+                       <string>Laki - Laki</string>
                       </property>
                      </widget>
                     </item>
@@ -985,7 +982,7 @@
                  <string notr="true">background-color: #7894CF;</string>
                 </property>
                 <property name="text">
-                 <string>Select Folder</string>
+                 <string>Select a Folder</string>
                 </property>
                </widget>
               </item>
@@ -1038,7 +1035,7 @@
               <item alignment="Qt::AlignRight">
                <widget class="QPushButton" name="btn_pdf2">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
@@ -1050,7 +1047,7 @@
                  <bool>false</bool>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">background-color: #7894CF;  margin-left: 4;</string>
+                 <string notr="true">background-color: #7894CF; margin-left: 4;</string>
                 </property>
                 <property name="text">
                  <string>Download as PDF</string>

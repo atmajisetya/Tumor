@@ -21,11 +21,15 @@ class MainWindow:
         self.main_win = QMainWindow()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self.main_win)
+        # set the title
+        # self.ui.setWindowTitle("BrainTumorDetector")
 
         # untuk pindah antar stacked widget (menu fitur)
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
         self.ui.btn_menu_proses2.clicked.connect(self.showMulProses)
         self.ui.btn_menu_proses1.clicked.connect(self.showProses)
+        self.ui.btn_menu_bantuan.clicked.connect(self.showHelp)
+        self.ui.btn_menu_tentang.clicked.connect(self.showAbout)
 
         # event browse gambar untuk proses 1 image
         self.ui.btn_browse1.clicked.connect(self.getImage)
@@ -52,6 +56,14 @@ class MainWindow:
     # fungsi untuk menampilkan page home/fitur proses 1 gambar
     def showProses(self):
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
+
+    # fungsi untuk menampilkan page help
+    def showHelp(self):
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_bantuan)
+
+    # fungsi untuk menampilkan page about us
+    def showAbout(self):
+        self.ui.stackedWidget.setCurrentWidget(self.ui.page_tentang)
 
     # fungsi untuk mengambil gambar dari users
     def getImage(self):

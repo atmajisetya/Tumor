@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/icons8-brain-tumor-50.png</file>
     <file>icons/foldersearchS.png</file>
     <file>icons/foldersearch.png</file>
     <file>icons/oneimagefix.png</file>
